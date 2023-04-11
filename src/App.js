@@ -9,20 +9,6 @@ function App() {
   //const [templates, setTemplates] = useState([data.templates])
   const templates = data.templates
 
-  {/*const fetchUserData = () => {
-    fetch("https://front-end-task-dot-result-analytics-dot-fpls-dev.uc.r.appspot.com/api/v1/public/task_templates")
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        setTemplates(data)
-      })
-  }
-
-  useEffect(() => {
-    fetchUserData()
-  }, [])*/}
-
   const [renderedTemplates, setRenderedTemplates] = useState(templates)
   useEffect(() => {
       setRenderedTemplates(templates);
