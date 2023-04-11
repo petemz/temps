@@ -1,0 +1,3 @@
+[submodule "form-templates"]
+	path = form-templates
+	url = https://github.com/petemz/form-templates.git
