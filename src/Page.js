@@ -21,12 +21,12 @@ function Page({ templates }) {
         );
     }
 
-    const items = currentItems.map(template => {
+    const temps = currentItems.map(template => {
         return (
-            <div key={template.name} className="group my-2 h-48 w-full max-w-[350px] overflow-hidden rounded relative bg-white shadow-[0px_4px_30px_rgba(0,0,0,0.08)]">
+            <div key={template.name} className="group transition-all ease-in-out hover:scale-105 my-2 h-52 w-full max-w-[350px] overflow-hidden rounded relative bg-white shadow-[0px_4px_30px_rgba(0,0,0,0.08)]">
                 <div className="p-4 pt-6">
-                    <h3 className="text-2xl mb-4 line-clamp-1 font-semibold ">{template.name}</h3>
-                    <p className="mb-4">{template.description}</p>
+                    <h3 className="text-2xl mb-4 line-clamp-2 font-semibold ">{template.name}</h3>
+                    <p className="mb-4 line-clamp-2">{template.description}</p>
                 </div>
         
                 <button className="w-full h-10 pl-6 absolute bottom-0 text-lime-500 bg-gray-200 group-hover:bg-lime-500 group-hover:text-white text-left">Use Template</button>
@@ -36,13 +36,13 @@ function Page({ templates }) {
 
     return (
         <div className=''>
-            <div className="grid lg:grid-cols-3 sm:grid-cols-2 place-items-center gap-12 ">
-                {items}
+            <div className="grid lg:grid-cols-3 xs:grid-cols-2 place-items-center xs:gap-12 ">
+                {temps}
             </div>
             
 
             <div className='flex flex-row justify-between mt-14'>
-                <button key="back" disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)} className="block bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l-lg">
+                <button key="back" disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)} className="block bg-gray-300 hover:bg-lime-500 text-gray-800 hover:text-white font-bold py-2 px-4 rounded-l-lg">
                     <span>{'< Previous'}</span>
                 </button>
                 
@@ -53,7 +53,7 @@ function Page({ templates }) {
                     <span>of {pageNumbers.length}</span>
                 </div>
                 
-                <button key="next" disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r-lg">
+                <button key="next" disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)} className="bg-gray-300 hover:bg-lime-500 text-gray-800 hover:text-white font-bold py-2 px-4 rounded-r-lg">
                     <span>{'Next >'}</span>
                 </button>
             </div>
