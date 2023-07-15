@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function Page({ templates }) {
     const [currentPage, setCurrentPage] = useState(1);
@@ -9,8 +9,7 @@ function Page({ templates }) {
     const currentItems = templates.slice(indexOfFirstItem, indexOfLastItem);
     
     const totalPages = Math.ceil(templates.length / itemsPerPage)
-    const pageNumbers = [];
-
+    const pageNumbers = []
   
     // Add page number buttons
     for (let i = 1; i <= totalPages; i++) {
@@ -39,7 +38,6 @@ function Page({ templates }) {
             <div className="grid lg:grid-cols-3 xs:grid-cols-2 place-items-center xs:gap-12 ">
                 {temps}
             </div>
-            
 
             <div className='flex flex-row justify-between mt-14'>
                 <button key="back" disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)} className="block bg-gray-300 hover:bg-lime-500 text-gray-800 hover:text-white font-bold py-2 px-4 rounded-l-lg">

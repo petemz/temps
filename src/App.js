@@ -20,10 +20,8 @@ function App() {
     fetchUserData()
   }, [])
 
-  //const [templates, setTemplates] = useState([data.templates])
-  //const templates = data.templates
-
   const [renderedTemplates, setRenderedTemplates] = useState(templates)
+
   useEffect(() => {
       setRenderedTemplates(templates);
   }, [templates])
@@ -38,7 +36,6 @@ function App() {
     let dateB = new Date(b.created).getTime();
     return dateA < dateB ? 1 : -1; 
   })
-
   
   function handleCategoryChange(event) {
     const { value } = event.target;
@@ -61,7 +58,6 @@ function App() {
     if (value === "Default") {
       setRenderedTemplates(templates)
     } else if (value === "Ascending") {
-      //setRenderedTemplates(alphaTemplates)
       setRenderedTemplates(alphaTemplates)
     } else if (value === "Descending") {
       setRenderedTemplates(alphaTemplates.reverse())
@@ -74,7 +70,6 @@ function App() {
     if (value === "Default") {
       setRenderedTemplates(templates)
     } else if (value === "Ascending") {
-      //setRenderedTemplates(alphaTemplates)
       setRenderedTemplates(dateTemplates)
     } else if (value === "Descending") {
       setRenderedTemplates(dateTemplates.reverse())
@@ -90,7 +85,6 @@ function App() {
     setRenderedTemplates(filtered);
   }
 
-  console.log(isLoading)
   return (
     <div>
       {isLoading ? (
